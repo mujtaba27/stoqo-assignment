@@ -24,7 +24,7 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }
   gettokenval() {
-      if (this.router.url === '/login') {
+      if (this.router.url === '/login' || this.router.url === '/signup') {
         return true;
       } else {
         if (localStorage.getItem('currentUser')) {
