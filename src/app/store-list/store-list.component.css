@@ -1,0 +1,9 @@
+.selected:hover{
+  background-color: lightgrey !important;
+  color: white;
+}
+form {
+  float: right;
+  width:40%;
+}
+

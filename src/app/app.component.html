@@ -1,0 +1,14 @@
+<div *ngIf="currentUser" class="wrapper">
+  <button class="btn btn-primary pull-right" (click)="logout()">Logout</button>
+</div>
+
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <router-outlet *ngIf="gettokenval()"></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

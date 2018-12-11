@@ -1,0 +1,23 @@
+<button (click)="goBack()"><span class="fas fa fa-arrow-left mr-1"></span>Store List</button>
+<table class="table table-striped border-top">
+  <thead>
+  </thead>
+  <tr>
+  <tr *ngIf="item.phone">
+    <th>Phone</th>
+    <td>{{item.phone}}</td>
+  </tr>
+  <tr *ngIf="item.address">
+    <th>Address</th>
+    <td>{{item.address}}</td>
+  </tr>
+  <tr *ngIf="item.type">
+    <th>Type</th>
+    <td>{{item.type}}</td>
+  </tr>
+  <tr *ngIf="item.description">
+    <th>Description</th>
+    <td>{{item.description}}</td>
+  </tr>
+  </tbody>
+</table>

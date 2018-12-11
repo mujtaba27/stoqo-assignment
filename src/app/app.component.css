@@ -1,0 +1,8 @@
+.wrapper {
+  float:left;
+  width: 100%;
+  background-color: darkgray;
+}
+.wrapper button {
+  float: right;
+}

@@ -1,0 +1,49 @@
+<form>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"></div>
+      <input type="text" class="form-control" name="searchString" placeholder="Type to search..." [(ngModel)]="searchString">
+    </div>
+  </div>
+</form>
+<table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="[5]">
+  <thead>
+  <tr>
+    <th>
+      <mfDefaultSorter by="id">id</mfDefaultSorter>
+    </th>
+    <th>
+      <mfDefaultSorter by="name">Name</mfDefaultSorter>
+    </th>
+    <th>
+      <mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+    </th>
+    <th>
+      <mfDefaultSorter by="address">Address</mfDefaultSorter>
+    </th>
+    <th>
+      <mfDefaultSorter by="type">Type</mfDefaultSorter>
+    </th>
+    <th>
+      <mfDefaultSorter by="description">Description</mfDefaultSorter>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of mf.data | filter : 'name' : searchString;" (click)="routingtodetail(item)" class="selected">
+    <td>{{item.id}}</td>
+    <td>{{item.name | uppercase}}</td>
+    <td>{{item.phone}}</td>
+    <td>{{item.address}}</td>
+    <td>{{item.type}}</td>
+    <td>{{item.description}}</td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td>
+      <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+    </td>
+  </tr>
+  </tfoot>
+</table>
